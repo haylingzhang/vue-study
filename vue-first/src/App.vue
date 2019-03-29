@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <Header></Header>
-        <Content></Content>
+        <Header @change="navChangeHandle"></Header>
+        <Content :propsData="curIndex"></Content>
     </div>
 </template>
 
@@ -17,14 +17,18 @@
         mounted() {},
         data() {
             return {
-                list:[1,2,3,4,5]
+                curIndex: 1,
             };
         },
         watch: {
             
         },
         computed: {},
-        methods: {}
+        methods: {
+            navChangeHandle(curIndex){
+                this.curIndex = curIndex
+            }
+        }
     };
 </script>
 

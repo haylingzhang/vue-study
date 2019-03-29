@@ -1,13 +1,17 @@
 <template>
     <div class="wrapper">
-        
+        {{propsData}}
     </div>
 </template>
 
 <script>
     export default {
         name: "content",
-        props: {},
+        props: {
+            propsData:{
+                type: Number
+            }
+        },
         created() {},
         mounted() {},
         data() {

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="nav-list">
-            <span class="nav-list-item" v-for="(value, index) in list" :key="index">{{value}}</span>
+            <span class="nav-list-item" v-for="(value, index) in list" :key="index" @click="clickHandle(value)">{{value}}</span>
         </div>
     </div>
 </template>
@@ -18,7 +18,11 @@
         },
         watch: {},
         computed: {},
-        methods: {}
+        methods: {
+            clickHandle(value){
+                this.$emit("change", value)
+            }
+        }
     };
 </script>
 <style scoped>
